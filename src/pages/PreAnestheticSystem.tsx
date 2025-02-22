@@ -484,9 +484,91 @@ const PreAnestheticSystem: React.FC = () => {
               </div>
             </div>
           </div>
+<div className="space-y-4">
+            <Label>ECG:</Label>
+            <Input id="ecg" name="ecg" value={formData.ecg} onChange={handleInputChange} />
+          </div>
+          
+          <div className="space-y-4">
+            <Label>Raio-X Tórax:</Label>
+            <Input id="chestXray" name="chestXray" value={formData.chestXray} onChange={handleInputChange} />
+          </div>
 
-          {/* Digital Signature */}
-          <div className="mt-6 border-t pt-6">
+          <div className="space-y-4">
+            <Label>Exames Complementares:</Label>
+            <Textarea
+              id="additionalTests"
+              name="additionalTests"
+              value={formData.additionalTests}
+              onChange={handleInputChange}
+              placeholder="Liste os exames complementares"
+            />
+          </div>
+
+          <div className="space-y-4">
+            <Label>Avaliação Especialista:</Label>
+            <Textarea
+              id="specialistEvaluation"
+              name="specialistEvaluation"
+              value={formData.specialistEvaluation}
+              onChange={handleInputChange}
+              placeholder="Avaliação do especialista"
+            />
+          </div>
+
+          <div className="space-y-4">
+            <Label>Jejum:</Label>
+            <div className="flex items-center space-x-4">
+              <label className="flex items-center">
+                <input type="checkbox" id="fastingSolids" name="fastingSolids" checked={formData.fastingSolids} onChange={handleInputChange} />
+                <span className="ml-2">Jejum para alimentos sólidos de 08hs antes do procedimento cirúrgico</span>
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" id="fastingLiquids" name="fastingLiquids" checked={formData.fastingLiquids} onChange={handleInputChange} />
+                <span className="ml-2">Jejum de 02 horas para líquidos claros (água, suco coado) antes do procedimento cirúrgico</span>
+              </label>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <Label>Autorização para receber concentrado de hemácias:</Label>
+            <div className="flex items-center space-x-4">
+              <label className="flex items-center">
+                <input type="radio" id="bloodTransfusionConsentYes" name="bloodTransfusionConsent" value="sim" checked={formData.bloodTransfusionConsent} onChange={handleInputChange} />
+                <span className="ml-2">Sim</span>
+              </label>
+              <label className="flex items-center">
+                <input type="radio" id="bloodTransfusionConsentNo" name="bloodTransfusionConsent" value="não" checked={!formData.bloodTransfusionConsent} onChange={handleInputChange} />
+                <span className="ml-2">Não</span>
+              </label>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <Label>Anestesia Proposta:</Label>
+            <Input id="proposedAnesthesia" name="proposedAnesthesia" value={formData.proposedAnesthesia} onChange={handleInputChange} />
+          </div>
+
+          <div className="space-y-4">
+            <Label>Liberado para procedimento:</Label>
+            <div className="flex items-center space-x-4">
+              <label className="flex items-center">
+                <input type="radio" id="releasedYes" name="released" value="sim" checked={formData.released} onChange={handleInputChange} />
+                <span className="ml-2">Sim</span>
+              </label>
+              <label className="flex items-center">
+                <input type="radio" id="releasedNo" name="released" value="não" checked={!formData.released} onChange={handleInputChange} />
+                <span className="ml-2">Não</span>
+              </label>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <Label>Assinatura do Médico:</Label>
+            <Input id="doctorSignature" name="doctorSignature" value={formData.doctorSignature} onChange={handleInputChange} />
+          </div>
+
+          <div className="space-y-4">
             <Label>Assinatura Digital:</Label>
             <div className="grid grid-cols-2 gap-4">
               <Input 
@@ -526,4 +608,4 @@ const PreAnestheticSystem: React.FC = () => {
   );
 };
 
-export default PreAnestheticSystem;
+export default PreAnestheticSystemPart2;

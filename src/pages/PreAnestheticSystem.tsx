@@ -550,10 +550,6 @@ const PreAnestheticSystem: React.FC = () => {
     <div className="mt-2">
       <Label>Observações adicionais sobre jejum:</Label>
       <Textarea
-        id="fastingInstructions"
-        name="fastingInstructions"
-        value={formData.fastingInstructions}
-        onChange={handleInputChange}
         className="w-full min-h-[100px]"
         placeholder="Digite observações adicionais sobre o jejum..."
       />

@@ -516,20 +516,50 @@ const PreAnestheticSystem: React.FC = () => {
             />
           </div>
 
-          <div className="space-y-4">
-            <Label>Jejum:</Label>
-            <div className="flex items-center space-x-4">
-              <label className="flex items-center">
-                <input type="checkbox" id="fastingSolids" name="fastingSolids" checked={formData.fastingSolids} onChange={handleInputChange} />
-                <span className="ml-2">Jejum para alimentos sólidos de 08hs antes do procedimento cirúrgico</span>
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" id="fastingLiquids" name="fastingLiquids" checked={formData.fastingLiquids} onChange={handleInputChange} />
-                <span className="ml-2">Jejum de 02 horas para líquidos claros (água, suco coado) antes do procedimento cirúrgico</span>
-              </label>
-            </div>
-          </div>
-
+     <div className="space-y-4">
+  <Label>Jejum:</Label>
+  <div className="flex flex-col space-y-4">
+    <div className="flex items-center space-x-4">
+      <label className="flex items-center">
+        <input
+          type="checkbox"
+          id="fastingSolids"
+          name="fastingSolids"
+          checked={formData.fastingSolids}
+          onChange={handleInputChange}
+        />
+        <span className="ml-2">
+          Jejum para alimentos sólidos de 08hs antes do procedimento cirúrgico
+        </span>
+      </label>
+      <label className="flex items-center">
+        <input
+          type="checkbox"
+          id="fastingLiquids"
+          name="fastingLiquids"
+          checked={formData.fastingLiquids}
+          onChange={handleInputChange}
+        />
+        <span className="ml-2">
+          Jejum de 02 horas para líquidos claros (água, suco coado) antes do procedimento cirúrgico
+        </span>
+      </label>
+    </div>
+    
+    {/* Campo para livre digitação */}
+    <div className="mt-2">
+      <Label>Observações adicionais sobre jejum:</Label>
+      <Textarea
+        id="fastingInstructions"
+        name="fastingInstructions"
+        value={formData.fastingInstructions}
+        onChange={handleInputChange}
+        className="w-full min-h-[100px]"
+        placeholder="Digite observações adicionais sobre o jejum..."
+      />
+    </div>
+  </div>
+</div>
           <div className="space-y-4">
             <Label>Autorização para receber concentrado de hemácias:</Label>
             <div className="flex items-center space-x-4">

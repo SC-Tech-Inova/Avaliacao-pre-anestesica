@@ -608,4 +608,4 @@ const PreAnestheticSystem: React.FC = () => {
   );
 };
 
-export default PreAnestheticSystemPart2;
+export default PreAnestheticSystem;

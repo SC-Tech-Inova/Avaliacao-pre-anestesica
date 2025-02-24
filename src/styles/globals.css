@@ -1,69 +1,304 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    
-    --card: var(--background);
-    --card-text: var(--foreground);
-    
-    --popover: var(--background);
-    --popover-text: var(--foreground);
-    
-    --primary: 222.2 47.1% 11.2%;
-    --primary-text: 210 40% 98%;
-    
-    --secondary: 210 40% 96.1%;
-    --secondary-text: var(--primary);
-    
-    --muted: var(--secondary);
-    --muted-text: 215.4 16.3% 46.9%;
-    
-    --accent: var(--secondary);
-    --accent-text: var(--primary);
-    
-    --destructive: 0 84.2% 60.2%;
-    --destructive-text: var(--primary-text);
-    
-    --border: 214.3 31.8% 91.4%;
-    --input: var(--border);
-    
-    --ring: var(--foreground);
-    
-    --radius: 0.5rem;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Container Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Button Styles */
+button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Form Styles */
+input, textarea, select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.space-x-2 > * + * {
+  margin-left: 0.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.min-h-100 {
+  min-height: 100px;
+}
+
+/* Login Page Styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.login-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    
-    --card: var(--background);
-    --card-text: var(--foreground);
-    
-    --popover: var(--background);
-    --popover-text: var(--foreground);
-    
-    --primary: var(--foreground);
-    --primary-text: var(--primary);
-    
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-text: var(--foreground);
-    
-    --muted: var(--secondary);
-    --muted-text: 215 20.2% 65.1%;
-    
-    --accent: var(--secondary);
-    --accent-text: var(--foreground);
-    
-    --destructive: 0 62.8% 30.6%;
-    --destructive-text: var(--foreground);
-    
-    --border: var(--secondary);
-    --input: var(--secondary);
-    
-    --ring: 212.7 26.8% 83.9%;
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+  outline: none;
+}
+/* Container principal */
+.form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Cabeçalho do formulário */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a365d;
+}
+
+/* Botão de logout */
+.logout-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background-color: #e53e3e;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.logout-btn:hover {
+  background-color: #c53030;
+}
+
+/* Seções do formulário */
+.form-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.form-section-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+/* Grupos de entrada */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+/* Grupos de checkbox e radio */
+.checkbox-group, .radio-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.checkbox-label, .radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4a5568;
+}
+
+/* Ações do formulário */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.primary-btn {
+  background-color: #4299e1;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #3182ce;
+}
+
+.secondary-btn {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.secondary-btn:hover {
+  background-color: #cbd5e0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1rem;
+  }
+  
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .form-section {
+    padding: 1rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .action-btn {
+    width: 100%;
   }
 }
